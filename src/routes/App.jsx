@@ -1,6 +1,6 @@
 //command rafce is like the ! but with react
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import Layout from '@containers/Layout';
 import Login from '@pages/Login';
 import RecoveryPassword from '@pages/RecoveryPassword';
@@ -20,7 +20,7 @@ function App() {
   const initialState = useInitialState()
   return (
     <AppContext.Provider value={initialState}>
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         {/* <Header/> */}
         <Switch>
@@ -36,7 +36,7 @@ function App() {
           <Route path="*" component={NotFound} />
         </Switch>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
     </AppContext.Provider>
   );
 }
